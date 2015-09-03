@@ -61,7 +61,6 @@ class SwaggerUIView(View):
             'swagger_settings': {
                 'discovery_url': "%s/api-docs/" % get_full_base_path(request),
                 'api_key': rfs.SWAGGER_SETTINGS.get('api_key', ''),
-                'token_type': rfs.SWAGGER_SETTINGS.get('token_type'),
                 'enabled_methods': mark_safe(
                     json.dumps(rfs.SWAGGER_SETTINGS.get('enabled_methods'))),
                 'doc_expansion': rfs.SWAGGER_SETTINGS.get('doc_expansion', ''),
