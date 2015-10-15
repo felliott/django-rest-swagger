@@ -2,6 +2,7 @@ import datetime
 import platform
 import functools
 import os
+import re
 import copy
 import os.path
 from mock import Mock, patch
@@ -108,7 +109,7 @@ class HTTPSTest(TestCase):
         response = self.client.get("/swagger/",
                                    **{'wsgi.url_scheme': 'https'})
         content = response.content.decode()
-        self.assertIn("url: 'https", content)
+        self.assertTrue(re.search(r'https://[^/]+/swagger/', content))
 
     def test_api_docs(self):
         from django.utils.six.moves.urllib import parse
