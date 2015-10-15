@@ -116,14 +116,18 @@
     {% block header %}
     <div id='header'>
         <div class="swagger-ui-wrap">
+            {% block branding %}
             <a id="logo" href="http://swagger.io">swagger</a>
+            {% endblock %}
 
+            {% block api_selector %}
             <form id='api_selector'>
                 <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl"
                                           type="text"/></div>
                 <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
                 <div class='input'><a id="explore" href="#" data-sw-translate>Explore</a></div>
             </form>
+            {% endblock %}
         </div>
     </div>
     {%  endblock %}
